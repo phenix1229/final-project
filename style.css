@@ -1,40 +1,83 @@
 * {
     margin: 0;
     padding: 0;
+    color: rgb(67, 80, 93);
+    text-decoration: none;
 }
 
-#app {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 9fr;
-}
+@media (max-width: 500px){
+    #app {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 9fr;
+    }
 
-#header {
-    display: grid;
-    grid-column: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-}
+    #header {
+        grid-row: 1/2;
+        display: grid;
+        grid-column: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        background-color: dodgerblue;
+        color: rgb(67, 80, 93);
+    }
 
-#nav {
+    #nav {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        text-align: left;
+        padding: 15px 0 10px 10px;
+        /* justify-items: baseline; */
+    }
 
-}
+    #title {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        text-align: center;
+        padding: 10px 0 10px 0;
+    }
 
-#title {
+    #menu {
+        grid-column: 3/4;
+        grid-row: 1/2;
+        text-align: right;
+        padding: 15px 10px 10px 0;
+        /* justify-content: baseline; */
+    }
 
-}
+    #main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
 
-#menu {
+    #options {
+        align-self: center;
+        justify-self: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
 
-}
+    .option {
+        padding: 20px;
+        border: 1px solid grey;
+    }
 
-#main {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-}
+    #checking {
+        text-align: center;
+    }
 
-#options {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+    #savings {
+        text-align: center;
+    }
+
+    #transfer {
+        text-align: center;
+    }
+
+    #debtCred {
+        text-align: center;
+    }
+
+
 }
