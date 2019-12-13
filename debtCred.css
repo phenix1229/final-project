@@ -44,7 +44,37 @@
 
     #balances {
         grid-row: 2/3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         background-color: white;
+        font-size: 20px;
+    }
+
+    #curBal {
+        grid-row: 1/2;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #availBal {
+        grid-row: 2/3;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .balance {
+        grid-column: 1/2;
+        width: 100%;
+        white-space: nowrap;
+        padding: 10px 0 10px 10px;
+    }
+
+    .amount {
+        grid-column: 2/3;
+        width: 100%;
+        text-align: right;
+        padding: 10px 0 10px 10px;
     }
 
     #main {
@@ -55,7 +85,8 @@
     }
 
     #options {
-        align-self: center;
+        margin: 20px;
+        align-self: flex-start;
         justify-self: center;
         display: grid;
         grid-template-columns: 1fr;
@@ -65,11 +96,11 @@
     .option {
         padding: 20px;
         border: 1px solid grey;
+        font-size: 20px;
     }
 
     #op1 {
         grid-row: 1/2;
-        text-align: center;
     }
 
     #op2 {
@@ -87,5 +118,7 @@
         text-align: center;
     }
 
-
+    input, select, button {
+        font-size: 16px;
+    }
 }

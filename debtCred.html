@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./debtCred.css">
     <title>Debits and Credits</title>
 </head>
 <body>
@@ -22,30 +22,34 @@
         </div>
         <div id="balances">
             <div id="curBal">
-
+                <div class="balance">Current balance:</div>
+                <div class="amount">a1</div>
             </div>
             <div id="availBal">
-                
+                <div class="balance">Available balance:</div>
+                <div class="amount">a2</div>
             </div>
         </div>
         <div id="main">
             <div id="options">
                 <div id="op1" class="option">
-                    <input type="text" id="transAmount" placeholder="Transfer amount">
+                    <input type="text" id="dollarAmount" placeholder="Enter dollar amount">
                 </div>
                 <div id="op2" class="option">
-                    <label for="transFrom">Transfer from:</label>
+                    <label for="debtOrCred">Debit or credit:</label>
                     <br>
-                    <select id="transFrom" name="transFrom">
-                        <option value="1">Checking</option>
-                        <option value="2">Savings</option>
+                    <select id="debtOrCred" name="debtOrCred">
+                        <option value="1">Debit</option>
+                        <option value="2">Credit</option>
+                    </select>
                 </div>
                 <div id="op3" class="option">
-                    <label for="transTo">Transfer to:</label>
+                    <label for="acctChoice">Choose account:</label>
                     <br>
-                    <select id="transTo" name="transTo">
+                    <select id="acctChoice" name="acctChoice">
                         <option value="1">Checking</option>
                         <option value="2">Savings</option>
+                    </select>
                 </div>
                 <div id="op4" class="option">
                     <button id="submitTrans">Submit</button>
