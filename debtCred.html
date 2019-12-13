@@ -30,26 +30,26 @@
         </div>
         <div id="main">
             <div id="options">
-                <a href="./checking.html">
-                    <div id="checking" class="option">
-                    <h2>Checking</h2>
-                    </div>
-                </a>
-                <a href="./savings.html">
-                    <div id="savings" class="option">
-                        <h2>Savings</h2>
-                    </div>
-                </a>
-                <a href="./transfer.html">
-                    <div id="transfer" class="option">
-                        <h2>Tranfer</h2>
-                    </div>
-                </a>
-                <a href="./debtCred.html">
-                    <div id="debtCred" class="option">
-                        <h2>Debit / Credit</h2>
-                    </div>
-                </a>
+                <div id="op1" class="option">
+                    <input type="text" id="transAmount" placeholder="Transfer amount">
+                </div>
+                <div id="op2" class="option">
+                    <label for="transFrom">Transfer from:</label>
+                    <br>
+                    <select id="transFrom" name="transFrom">
+                        <option value="1">Checking</option>
+                        <option value="2">Savings</option>
+                </div>
+                <div id="op3" class="option">
+                    <label for="transTo">Transfer to:</label>
+                    <br>
+                    <select id="transTo" name="transTo">
+                        <option value="1">Checking</option>
+                        <option value="2">Savings</option>
+                </div>
+                <div id="op4" class="option">
+                    <button id="submitTrans">Submit</button>
+                </div>
             </div>
         </div>
     </div>

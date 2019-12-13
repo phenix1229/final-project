@@ -18,7 +18,6 @@
         grid-column: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
         background-color: dodgerblue;
-        color: rgb(67, 80, 93);
     }
 
     #nav {
@@ -26,7 +25,6 @@
         grid-row: 1/2;
         text-align: left;
         padding: 15px 0 10px 10px;
-        /* justify-items: baseline; */
     }
 
     #title {
@@ -41,10 +39,10 @@
         grid-row: 1/2;
         text-align: right;
         padding: 15px 10px 10px 0;
-        /* justify-content: baseline; */
     }
 
     #main {
+        grid-row: 2/3;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
@@ -64,20 +62,22 @@
     }
 
     #checking {
+        grid-row: 1/2;
         text-align: center;
     }
 
     #savings {
+        grid-row: 2/3;
         text-align: center;
     }
 
     #transfer {
+        grid-row: 3/4;
         text-align: center;
     }
 
     #debtCred {
+        grid-row: 4/5;
         text-align: center;
     }
-
-
 }
