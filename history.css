@@ -45,6 +45,7 @@
 
     #balances {
         grid-row: 2/3;
+        padding-top: 10px;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
@@ -53,7 +54,6 @@
     }
 
     #curBal {
-        /* grid-column: 1/3; */
         grid-row: 1/2;
         width: 100%;
         display: grid;
@@ -61,7 +61,6 @@
     }
 
     #availBal {
-        /* grid-column: 1/3; */
         grid-row: 2/3;
         width: 100%;
         display: grid;
