@@ -12,14 +12,35 @@ const today = () =>{
 }
 
 let balanceData = {
-    "checkingBalance": '',
-    "savingsBalance": '',
-    "actDate": [],
-    "actDesc": [],
-    "actAmt": [],
+    "checkingBalance": 0,
+    "savingsBalance": 0,
+    "cActDate": [],
+    "cActDesc": [],
+    "cActAmt": [],
+    "sActDate": [],
+    "sActDesc": [],
+    "sActAmt": [],
 }
 
-const updateData = () => {
-    let dataStr = JSON.stringify(balanceData);
+
+function setData (){
+    if (!localStorage.length > 0){
+        let dataStr = JSON.stringify(balanceData);
+        localStorage.setItem("appData", dataStr);
+    }
+}
+
+window.addEventListener('load', () => {
+    setData();
+    document.querySelector('#cAmount').innerText = `$${dataObj.checkingBalance}`;
+    document.querySelector('#sAmount').innerText = `$${dataObj.savingsBalance}`;
+});
+
+let bdo = localStorage.getItem('appData');
+
+let dataObj = JSON.parse(bdo);
+
+function updateData (){
+    let dataStr = JSON.stringify(dataObj);
     localStorage.setItem("appData", dataStr);
 }
