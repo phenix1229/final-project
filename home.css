@@ -5,7 +5,7 @@
     text-decoration: none;
 }
 
-@media (max-width: 500px){
+/* @media (max-width: 500px){ */
     #app {
         display: grid;
         grid-template-columns: 1fr;
@@ -85,4 +85,4 @@
         display: none;
         overflow: hidden;
     }
-}
+/* } */
