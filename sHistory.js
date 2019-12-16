@@ -6,7 +6,7 @@ window.addEventListener('load', function(){
         document.querySelector('#actionDesc').appendChild(document.createElement('tr')).innerText = item;
     });
     dataObj.sActAmt.forEach(item => {
-        document.querySelector('#actionAmount').appendChild(document.createElement('tr')).innerText = item;
+        document.querySelector('#actionAmount').appendChild(document.createElement('tr')).innerText = `$${item}`;
     });
 })
 

@@ -44,8 +44,8 @@ document.querySelector('#submitTrans').addEventListener('click', function(){
     if(transAmount && transFrom.value === '2'){
         dataObj.cActDate.push(today());
         dataObj.sActDate.push(today());
-        dataObj.sActDesc.push(`Transfer to ${ttVal()}`);
-        dataObj.cActDesc.push(`Transfer from ${tfVal()}`);
+        dataObj.sActDesc.push(`Transfer to ${ttVal()}.`);
+        dataObj.cActDesc.push(`Transfer from ${tfVal()}.`);
         dataObj.sActAmt.push(`-${transAmount.value}`);
         dataObj.cActAmt.push(`${transAmount.value}`);
     }
