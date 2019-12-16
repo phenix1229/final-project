@@ -65,4 +65,5 @@ document.querySelector('#submitAction').addEventListener('click', function(){
     dollarAmount.value = '';
     description.value = '';
     updateData();
+    location.reload();
 })

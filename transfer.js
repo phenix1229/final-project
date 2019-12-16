@@ -52,4 +52,5 @@ document.querySelector('#submitTrans').addEventListener('click', function(){
     calcBalAfterTrans();
     transAmount.value = '';
     updateData()
+    location.reload();
 })
