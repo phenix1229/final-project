@@ -1,7 +1,3 @@
-let bdo = localStorage.getItem('appData');
-
-let dataObj = JSON.parse(bdo);
-
 const transAmount = document.querySelector('#transAmount');
 
 const transFrom = document.querySelector('#transFrom');
@@ -25,24 +21,35 @@ const ttVal = () => {
 }
 
 const calcBalAfterTrans = () => {
-    if (transFrom.value === 1 && transTo.value === 2){
-        balanceData.checkingBalance = Number(balanceData.checkingBalance) - Number(transAmount);
-        balanceData.savingsBalance = Number(balanceData.savingsBalance) + Number(transAmount);
-    } else if (transFrom.value === 2 && transTo.value === 1){
-        balanceData.savingsBalance = Number(balanceData.savingsBalance) - Number(transAmount);
-        balanceData.checkingBalance = Number(balanceData.checkingBalance) + Number(transAmount);
+    if (transFrom.value === '1' && transTo.value === '2'){
+        dataObj.checkingBalance = Number(dataObj.checkingBalance) - Number(transAmount.value);
+        dataObj.savingsBalance = Number(dataObj.savingsBalance) + Number(transAmount.value);
+    } else if (transFrom.value === '2' && transTo.value === '1'){
+        dataObj.savingsBalance = Number(dataObj.savingsBalance) - Number(transAmount.value);
+        dataObj.checkingBalance = Number(dataObj.checkingBalance) + Number(transAmount.value);
     }
 }
 
 
 
 document.querySelector('#submitTrans').addEventListener('click', function(){
-    if(transAmount){
-        balanceData.actDate.push(today());
-        balanceData.actDesc.push(`Transfer from ${tfVal()} to ${ttVal()}`);
-        balanceData.actAmt.push(`${transAmount.value}`);
-        calcBalAfterTrans();
-        transAmount.value = '';
+    if(transAmount && transFrom.value === '1'){
+        dataObj.cActDate.push(today());
+        dataObj.sActDate.push(today());
+        dataObj.cActDesc.push(`Transfer to ${ttVal()}`);
+        dataObj.sActDesc.push(`Transfer from ${tfVal()}`);
+        dataObj.cActAmt.push(`-${transAmount.value}`);
+        dataObj.sActAmt.push(`${transAmount.value}`);
     }
+    if(transAmount && transFrom.value === '2'){
+        dataObj.cActDate.push(today());
+        dataObj.sActDate.push(today());
+        dataObj.sActDesc.push(`Transfer to ${ttVal()}`);
+        dataObj.cActDesc.push(`Transfer from ${tfVal()}`);
+        dataObj.sActAmt.push(`-${transAmount.value}`);
+        dataObj.cActAmt.push(`${transAmount.value}`);
+    }
+    calcBalAfterTrans();
+    transAmount.value = '';
     updateData()
 })

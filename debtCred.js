@@ -39,7 +39,18 @@ const calcBalAfterAction = () => {
 
 
 document.querySelector('#submitAction').addEventListener('click', function(){
-    if(dollarAmount){
+    if(dollarAmount && debtOrCred.value === '1'){
+        if (acctChoice.value === '1'){
+            dataObj.cActDate.push(today());
+            dataObj.cActDesc.push(`${docVal()}. ${description.value}.`);
+            dataObj.cActAmt.push(`-${dollarAmount.value}`);
+        } else if (acctChoice.value === '2'){
+            dataObj.sActDate.push(today());
+            dataObj.sActDesc.push(`${docVal()}. ${description.value}.`);
+            dataObj.sActAmt.push(`-${dollarAmount.value}`);
+        }
+    }
+    if(dollarAmount && debtOrCred.value === '2'){
         if (acctChoice.value === '1'){
             dataObj.cActDate.push(today());
             dataObj.cActDesc.push(`${docVal()}. ${description.value}.`);
@@ -49,9 +60,9 @@ document.querySelector('#submitAction').addEventListener('click', function(){
             dataObj.sActDesc.push(`${docVal()}. ${description.value}.`);
             dataObj.sActAmt.push(`${dollarAmount.value}`);
         }
-        calcBalAfterAction();
-        dollarAmount.value = '';
-        description.value = '';
     }
+    calcBalAfterAction();
+    dollarAmount.value = '';
+    description.value = '';
     updateData();
 })

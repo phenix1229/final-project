@@ -1,4 +1,4 @@
-document.querySelector('#menu > h2').addEventListener('click', function(){
+document.querySelector('#menu').addEventListener('click', function(){
     const optionsDiv = document.querySelector('#menuOptions');
     if(optionsDiv.style.display === 'none'){
         optionsDiv.style.display = 'block';
@@ -21,7 +21,6 @@ let balanceData = {
     "sActDesc": [],
     "sActAmt": [],
 }
-
 
 function setData (){
     if (!localStorage.length > 0){

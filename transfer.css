@@ -63,14 +63,14 @@
         font-size: 20px;
     }
 
-    #curBal {
+    #checkingBal {
         grid-row: 1/2;
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
-    #availBal {
+    #savingsBal {
         grid-row: 2/3;
         width: 100%;
         display: grid;
@@ -84,7 +84,7 @@
         padding: 10px 0 10px 10px;
     }
     
-    #aBalance {
+    #sBalance {
         grid-column: 1/2;
         display: grid;
         white-space: nowrap;
@@ -98,7 +98,7 @@
         padding: 10px;
     }
     
-    #aAmount {
+    #sAmount {
         grid-column: 2/3;
         display: grid;
         text-align: right;
