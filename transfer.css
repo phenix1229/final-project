@@ -16,7 +16,7 @@
     #header {
         grid-row: 1/2;
         display: grid;
-        grid-column: 1fr 1fr 1fr;
+        grid-column: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr;
         background-color: dodgerblue;
         color: rgb(67, 80, 93);
@@ -41,6 +41,16 @@
         grid-row: 1/2;
         text-align: right;
         padding: 15px 10px 10px 0;
+    }
+
+    #menuOptions {
+        grid-column: 4/5;
+        display: none;
+        background-color: rgb(166, 204, 255);
+        font-size: 25px;
+        line-height: 1.5;
+        justify-content: space-between;
+        padding: 10px;
     }
 
     #balances {
