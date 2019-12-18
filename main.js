@@ -29,6 +29,31 @@ function setData (){
     }
 }
 
+const checkForNumbers = (val) => {
+    let f = 0;
+    let dot = 0;
+    for (const i of val){
+        if(isNaN(Number(i)) && i !== '.'){
+            f++;
+        }
+        if(i === '.'){
+            dot++
+        }
+    }
+    return dot > 1 || f > 0;
+}
+
+const clearDataObj = () => {
+    delete dataObj.cActAmt;
+    delete dataObj.cActDate;
+    delete dataObj.cActDesc;
+    delete dataObj.checkingBalance;
+    delete dataObj.sActAmt;
+    delete dataObj.sActDate;
+    delete dataObj.sActDesc;
+    delete dataObj.savingsBalance;
+}
+
 window.addEventListener('load', () => {
     setData();
     document.querySelector('#cAmount').innerText = `$${dataObj.checkingBalance}`;

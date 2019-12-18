@@ -36,29 +36,32 @@ const calcBalAfterAction = () => {
     }
 }
 
-
-
 document.querySelector('#submitAction').addEventListener('click', function(){
-    if(dollarAmount && debtOrCred.value === '1'){
-        if (acctChoice.value === '1'){
-            dataObj.cActDate.push(today());
-            dataObj.cActDesc.push(`${docVal()}. ${description.value}.`);
-            dataObj.cActAmt.push(`-${dollarAmount.value}`);
-        } else if (acctChoice.value === '2'){
-            dataObj.sActDate.push(today());
-            dataObj.sActDesc.push(`${docVal()}. ${description.value}.`);
-            dataObj.sActAmt.push(`-${dollarAmount.value}`);
+    if (checkForNumbers(dollarAmount.value) || !dollarAmount){
+        alert('Please enter dollar amount as a number.');
+        dollarAmount.value = '';
+    } else {
+        if (dollarAmount && debtOrCred.value === '1'){
+            if (acctChoice.value === '1'){
+                dataObj.cActDate.push(today());
+                dataObj.cActDesc.push(`${docVal()}. ${description.value}.`);
+                dataObj.cActAmt.push(`-${dollarAmount.value}`);
+            } else if (acctChoice.value === '2'){
+                dataObj.sActDate.push(today());
+                dataObj.sActDesc.push(`${docVal()}. ${description.value}.`);
+                dataObj.sActAmt.push(`-${dollarAmount.value}`);
+            }
         }
-    }
-    if(dollarAmount && debtOrCred.value === '2'){
-        if (acctChoice.value === '1'){
-            dataObj.cActDate.push(today());
-            dataObj.cActDesc.push(`${docVal()}. ${description.value}.`);
-            dataObj.cActAmt.push(`${dollarAmount.value}`);
-        } else if (acctChoice.value === '2'){
-            dataObj.sActDate.push(today());
-            dataObj.sActDesc.push(`${docVal()}. ${description.value}.`);
-            dataObj.sActAmt.push(`${dollarAmount.value}`);
+        if(dollarAmount && debtOrCred.value === '2'){
+            if (acctChoice.value === '1'){
+                dataObj.cActDate.push(today());
+                dataObj.cActDesc.push(`${docVal()}. ${description.value}.`);
+                dataObj.cActAmt.push(`${dollarAmount.value}`);
+            } else if (acctChoice.value === '2'){
+                dataObj.sActDate.push(today());
+                dataObj.sActDesc.push(`${docVal()}. ${description.value}.`);
+                dataObj.sActAmt.push(`${dollarAmount.value}`);
+            }
         }
     }
     calcBalAfterAction();
